@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${mensaje}
-	
-<!-- 	<a href="irRegistrar.html">Registrar</a> -->
-	<a href="irFormulario.html">Ir a formulario</a>
+Nombre : ${nombreModel} <br>
+Apellido : ${apellidoModel}
 </body>
 </html>

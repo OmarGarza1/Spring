@@ -12,8 +12,6 @@ public class HolaController {
 	{
 		ModelAndView MV = new ModelAndView("Hola", "mensaje", "miau");
 		
-	
-		
 		return MV;
 	}
 }
