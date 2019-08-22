@@ -12,9 +12,9 @@ public class App {
 		
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/prueba/xml/beans.xml");
 		
-		Persona per = (Persona) appContext.getBean("persona");
+		Persona per = (Persona) appContext.getBean("personaBean");
 		
-		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApellido() + " " + per.getPais().getNombre());
+		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApellido() + " " + per.getPais().getNombre() + " " + per.getPais().getCiudad().getNombre());
 		
 		((AbstractApplicationContext) appContext).close();
 	}

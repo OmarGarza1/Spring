@@ -12,6 +12,14 @@
 
 	<bean id="pais" class="com.prueba.beans.Pais">
 		<property name="nombre" value="Peru"></property>
+		<property name="ciudad">
+			<bean id="ciudad" class="com.prueba.beans.Ciudad">
+				<property name="nombre" value="Lima"></property>
+			</bean>
+		</property>
 	</bean>
+
+	<alias name="persona" alias="personaBean" />
+
 
 </beans>
