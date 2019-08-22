@@ -1,8 +1,10 @@
-package com.prueba.beans;
+package com.pruebas.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.prueba.beans.Persona;
 
 public class App {
 
@@ -12,7 +14,7 @@ public class App {
 		
 		Persona per = (Persona) appContext.getBean("persona");
 		
-		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApellido() );
+		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApellido() + " " + per.getPais().getNombre());
 		
 		((AbstractApplicationContext) appContext).close();
 	}
