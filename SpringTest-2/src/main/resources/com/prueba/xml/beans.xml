@@ -7,17 +7,9 @@
 
 	<bean
 		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>
-		
-		<context:annotation-config></context:annotation-config>
 
-	<bean id="messi" class="com.prueba.beans.Jugador">
-		<property name="numero" value="10"></property>
-		<property name="nombre" value="Lionel"></property>
-		<!-- property name="equipo" ref="barcelona"></property> -->
-	</bean>
+	
+	<context:component-scan base-package="com.prueba"></context:component-scan>
 
-	<bean id="barcelona" class="com.prueba.beans.Barcelona">
-	<qualifier value="barcelonaQualifier"></qualifier>
-	</bean>
-	<bean id="juventus" class="com.prueba.beans.Juventus"></bean>
+
 </beans>
