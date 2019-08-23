@@ -1,12 +1,20 @@
 package com.prueba.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import com.prueba.interfaces.IEquipo;
 
+ 
 public class Jugador implements IEquipo {
 
 	private int id;
 	private String nombre;
+	@Autowired
+	@Qualifier("barcelona")
 	private IEquipo equipo;
+	@Autowired
 	private Camiseta camiseta;
 
 	public int getId() {

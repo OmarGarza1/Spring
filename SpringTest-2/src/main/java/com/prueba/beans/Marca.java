@@ -1,5 +1,9 @@
 package com.prueba.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Marca {
 
 	private int id;
