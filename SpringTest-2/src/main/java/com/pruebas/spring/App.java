@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.prueba.beans.Ciudad;
 import com.prueba.beans.Persona;
 
 public class App {
@@ -12,9 +13,10 @@ public class App {
 		
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/prueba/xml/beans.xml");
 		
-		Persona per = (Persona) appContext.getBean("personaBean");
+		Persona per = (Persona) appContext.getBean("persona");
 		
-		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApellido() + " " + per.getPais().getNombre() + " " + per.getPais().getCiudad().getNombre());
+
+		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApellido() + " " + per.getPais().getNombre() + " " + per.getCiudad().getNombre() );
 		
 		((AbstractApplicationContext) appContext).close();
 	}
