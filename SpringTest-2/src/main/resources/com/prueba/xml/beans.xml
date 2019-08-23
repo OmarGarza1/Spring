@@ -3,25 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="com.prueba.beans.PruebaPostProcessor"></bean>
-
-	<bean id="persona" class="com.prueba.beans.Persona"
-		autowire="byName">
-		<property name="id" value="1"></property>
-		<property name="nombre" value="Omar"></property>
-		<property name="apellido" value="Greencho"></property>
+	<bean id="messi" class="com.prueba.beans.Jugador">
+	<property name="numero" value="10" ></property>
+	<property name="nombre" value="Lionel" ></property>
+	<property name="equipo" ref="barcelona" ></property>
 	</bean>
 
-	<bean id="pais" class="com.prueba.beans.Pais">
-		<property name="nombre" value="Peru"></property>
-	</bean>
-
-	<bean id="ciudad" class="com.prueba.beans.Ciudad">
-		<property name="nombre" value="Lima"></property>
-	</bean>
-
-
-	<alias name="persona" alias="personaBean" />
-
-
+	<bean id="barcelona" class="com.prueba.beans.Barcelona"></bean>
+<bean id="juventus" class="com.prueba.beans.Juventus"></bean>
 </beans>
