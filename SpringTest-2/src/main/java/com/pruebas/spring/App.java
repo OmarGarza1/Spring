@@ -1,5 +1,7 @@
 package com.pruebas.spring;
 
+import java.util.Scanner;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,11 +16,31 @@ public class App {
 
 	public static void main(String[] args) {
 
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Elija un equipo 1-Barcelona //// 2-Juventus");
+		int res = scan.nextInt();
+
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/prueba/xml/beans.xml");
-		 Jugador jug = (Jugador) appContext.getBean("messi");
-		Barcelona bar = (Barcelona) appContext.getBean("barcelona");
-		//Juventus jur = (Juventus) appContext.getBean("juventus");
-		 System.out.println(jug.getNombre() + " " + bar.mostrar());
+
+		Jugador jug = (Jugador) appContext.getBean("jugador1");
+
+		
+		switch (res) {
+		case 1:
+			jug.setEquipo(new Barcelona());
+			break;
+
+		case 2:
+			jug.setEquipo(new Juventus());
+			break;
+
+		default:
+			break;
+		}
+
+
+		System.out.println(jug.getId() + " " + jug.getNombre() + " " + jug.getEquipo().mostrar() + " "
+				+ jug.getCamiseta().getNumero() + " " + jug.getCamiseta().getMarca().getNombre());
 
 		((AbstractApplicationContext) appContext).close();
 	}

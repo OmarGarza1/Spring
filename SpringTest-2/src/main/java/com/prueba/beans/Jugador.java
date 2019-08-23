@@ -1,28 +1,20 @@
 package com.prueba.beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import com.prueba.interfaces.IEquipo;
 
-@Component("messi")
-public class Jugador {
+public class Jugador implements IEquipo {
 
-	private int numero;
-	@Value("messi")
+	private int id;
 	private String nombre;
-	@Autowired
-	//@Qualifier("barcelonaQualifier")
 	private IEquipo equipo;
+	private Camiseta camiseta;
 
-	public int getNumero() {
-		return numero;
+	public int getId() {
+		return id;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -37,9 +29,22 @@ public class Jugador {
 		return equipo;
 	}
 
-	//@Required - deprecated
 	public void setEquipo(IEquipo equipo) {
 		this.equipo = equipo;
+	}
+
+	public Camiseta getCamiseta() {
+		return camiseta;
+	}
+
+	public void setCamiseta(Camiseta camiseta) {
+		this.camiseta = camiseta;
+	}
+
+	@Override
+	public String mostrar() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
