@@ -10,13 +10,13 @@ import com.prueba.beans.Persona;
 public class App {
 
 	public static void main(String[] args) {
-		
-		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/prueba/xml/beans.xml");
-		
-		Persona per = (Persona) appContext.getBean("persona");
-		
 
-		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApellido() + " " + per.getPais().getNombre() + " " + per.getCiudad().getNombre() );
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/prueba/xml/beans.xml");
+
+		Persona per = (Persona) appContext.getBean("persona");
+
+		System.out.println(per.getApellido());
+		
 		
 		((AbstractApplicationContext) appContext).close();
 	}
