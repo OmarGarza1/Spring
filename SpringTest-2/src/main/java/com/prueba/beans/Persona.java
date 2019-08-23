@@ -3,7 +3,10 @@ package com.prueba.beans;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class Persona {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Persona implements InitializingBean, DisposableBean{
 
 	private int id;
 	private String nombre;
@@ -11,6 +14,7 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudad;
 
+	/*
 	@PostConstruct
 	private void init() 
 	{
@@ -22,6 +26,7 @@ public class Persona {
 	{
 		System.out.println("Antes de ser destruidon");
 	}
+	*/
 	
 	public Persona() {
 		
@@ -86,6 +91,16 @@ public class Persona {
 
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Antes de inicializar el bean");		
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Antes de ser destruido");		
 	}
 
 }
