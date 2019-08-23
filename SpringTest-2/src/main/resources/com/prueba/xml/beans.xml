@@ -3,6 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<bean class="com.prueba.beans.PruebaPostProcessor"></bean>
+
 	<bean id="persona" class="com.prueba.beans.Persona"
 		autowire="byName">
 		<property name="id" value="1"></property>

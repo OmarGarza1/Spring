@@ -95,12 +95,13 @@ public class Persona implements InitializingBean, DisposableBean{
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("Antes de inicializar el bean");		
+	//	System.out.println("Antes de inicializar el bean");		
 	}
 
 	@Override
 	public void destroy() throws Exception {
-		System.out.println("Antes de ser destruido");		
+	//	System.out.println("Antes de ser destruidon");
+		
 	}
 
 }
