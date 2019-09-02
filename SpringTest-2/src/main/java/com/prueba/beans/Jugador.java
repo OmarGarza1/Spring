@@ -2,6 +2,7 @@ package com.prueba.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.prueba.interfaces.IEquipo;
@@ -10,6 +11,7 @@ import com.prueba.interfaces.IEquipo;
 public class Jugador implements IEquipo {
 
 	private int id;
+	@Value("Greencho")
 	private String nombre;
 	@Autowired
 	@Qualifier("barcelona")

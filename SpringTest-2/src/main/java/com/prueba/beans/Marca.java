@@ -1,12 +1,15 @@
 package com.prueba.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Marca {
 
+	@Value("0")
 	private int id;
+	@Value("Marca1")
 	private String nombre;
 	
 	public int getId() {
