@@ -35,7 +35,7 @@ public class BinarySearchImpl {
 		int[] sortedNumbers = sortAlgorithm.sort(numbers);
 		System.out.println(sortAlgorithm);
 
-		return 0;
+		return 3;
 	}
 
 	@PostConstruct
